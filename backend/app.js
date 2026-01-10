@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
-import {connectDB} from "./configs/Db.js";
-
+import { connectDB } from "./configs/Db.js";
+import authRouter from "./routes/auth.route.js";
 
 const app = express();
 
@@ -13,7 +13,7 @@ app.use(express.json());
 connectDB();
 
 // Routes
-// app.use("/api/auth", require("./routes/auth.routes"));
+app.use("/api/auth", authRouter);
 // app.use("/api/books", require("./routes/book.routes"));
 // app.use("/api/borrow", require("./routes/borrow.routes"));
 // app.use("/api/reports", require("./routes/report.routes"));
