@@ -45,7 +45,7 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-
+    //Validation
     if (!email || !password) {
       return res.status(400).json({
         success: false,
@@ -54,11 +54,12 @@ export const login = async (req, res) => {
     }
 
     const user = await UserModel.findOne({ email });
-
+    //check user
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
 
+    //match password
     const isMatch = bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(401).json({ message: "Invalid credentials" });
