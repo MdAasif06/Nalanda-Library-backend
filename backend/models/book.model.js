@@ -28,6 +28,15 @@ const bookSchema = new mongoose.Schema(
       unique: true,
       trim: true
     },
+    publicationDate: {
+      type: Date,
+    },
+
+    totalCopies: {
+      type: Number,
+      required: true,
+      min: 1
+    },
 
     availableCopies: {
       type: Number,
