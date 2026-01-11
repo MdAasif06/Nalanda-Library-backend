@@ -1,16 +1,14 @@
 import Borrow from "../models/borrow.model.js";
 import Book from "../models/book.model.js";
 
-/* =========================
-   MEMBER → BORROW BOOK
-========================= */
+//    member → Borrow book
+
 export const borrowBook = async (req, res) => {
   const { bookId } = req.body;
 
   // Book check
   const book = await Book.findById(bookId);
-  if (!book)
-    return res.status(404).json({ message: "Book not found" });
+  if (!book) return res.status(404).json({ message: "Book not found" });
 
   if (book.availableCopies <= 0)
     return res.status(400).json({ message: "Book not available" });
@@ -18,7 +16,7 @@ export const borrowBook = async (req, res) => {
   // Borrow entry
   const borrow = await Borrow.create({
     user: req.user.id,
-    book: bookId
+    book: bookId,
   });
 
   // Decrease available copies
@@ -28,13 +26,12 @@ export const borrowBook = async (req, res) => {
   res.status(201).json({
     success: true,
     message: "Book borrowed successfully",
-    borrow
+    borrow,
   });
 };
 
-/* =========================
-   MEMBER → RETURN BOOK
-========================= */
+//    Member → Rrtuen Book
+
 export const returnBook = async (req, res) => {
   const borrow = await Borrow.findById(req.params.id);
   if (!borrow)
@@ -54,13 +51,12 @@ export const returnBook = async (req, res) => {
 
   res.json({
     success: true,
-    message: "Book returned successfully"
+    message: "Book returned successfully",
   });
 };
 
-/* =========================
-   USER → BORROW HISTORY
-========================= */
+//  Uset → Borrow history
+
 export const myBorrowHistory = async (req, res) => {
   const history = await Borrow.find({ user: req.user.id })
     .populate("book", "title author genre")
@@ -69,6 +65,6 @@ export const myBorrowHistory = async (req, res) => {
   res.json({
     success: true,
     count: history.length,
-    history
+    history,
   });
 };

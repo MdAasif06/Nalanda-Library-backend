@@ -1,9 +1,7 @@
 import mongoose from "mongoose";
 
-/*
-  Book Schema
-  Final & Correct
-*/
+
+  // Book Schema
 const bookSchema = new mongoose.Schema(
   {
     title: {

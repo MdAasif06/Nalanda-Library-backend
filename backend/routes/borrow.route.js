@@ -10,12 +10,12 @@ import {
 const router = express.Router();
 
 /* MEMBER → BORROW */
-router.post("/borrow", authMiddleware,roleMiddleware("admin"), borrowBook);
+router.post("/borrow", authMiddleware,roleMiddleware("member"), borrowBook);
 
 /* MEMBER → RETURN */
-router.put("/return/:id", authMiddleware,roleMiddleware("admin"), returnBook);
+router.put("/return/:id", authMiddleware,roleMiddleware("member"), returnBook);
 
 /* USER → HISTORY */
-router.get("/my-history", authMiddleware, myBorrowHistory);
+router.get("/my-history", authMiddleware,roleMiddleware("member"), myBorrowHistory);
 
 export default router;

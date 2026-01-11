@@ -1,16 +1,16 @@
 import Book from "../models/book.model.js";
 
-/* =========================
-   ADMIN: CREATE BOOK
-========================= */
+
+  //  admin: Create book
+
 export const createBook = async (req, res) => {
   const book = await Book.create(req.body);
   res.status(201).json(book);
 };
 
-/* =========================
-   ADMIN: UPDATE BOOK
-========================= */
+
+  //  admin: Update book
+
 export const updateBook = async (req, res) => {
   const book = await Book.findByIdAndUpdate(
     req.params.id,
@@ -24,9 +24,8 @@ export const updateBook = async (req, res) => {
   res.json(book);
 };
 
-/* =========================
-   ADMIN: DELETE BOOK
-========================= */
+  //  admin: Delete Book 
+
 export const deleteBook = async (req, res) => {
   const book = await Book.findByIdAndDelete(req.params.id);
 
@@ -36,17 +35,17 @@ export const deleteBook = async (req, res) => {
   res.json({ message: "Book deleted successfully" });
 };
 
-/* =========================
-   ALL USERS: GET ALL BOOKS
-========================= */
+
+  //  all users: Get all books
+
 export const getAllBooks = async (req, res) => {
   const books = await Book.find();
   res.json(books);
 };
 
-/* =========================
-   ALL USERS: GET BOOK BY ID
-========================= */
+
+  //  all Users: Get book by id
+
 export const getBookById = async (req, res) => {
   const book = await Book.findById(req.params.id);
 
