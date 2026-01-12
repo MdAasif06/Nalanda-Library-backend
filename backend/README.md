@@ -75,3 +75,34 @@ backend/
 ├── package.json           
 └── README.md             
 ```
+
+## 🚀 Quick Start
+
+### Prerequisites
+- **Node.js** (v18 or higher)
+- **npm**
+
+### Installation & Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/MdAasif06/Nalanda-Library-backend.git
+   cd backend
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm start
+    OR
+   npm run dev
+   ```
+
+4. **Open your browser**
+   - Visit: `http://localhost:8080`
+  
+
