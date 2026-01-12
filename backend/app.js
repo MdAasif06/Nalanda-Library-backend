@@ -24,6 +24,11 @@ app.use("/api/borrows", borrowRoutes);
 app.use("/api/reports", reportRoutes);
 
 
+//test for running aws deploye
+app.use('/',(req,res)=>{
+  res.send("server is running")
+})
+
 //port define
 const PORT = process.env.PORT || 5000;
 
