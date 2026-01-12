@@ -26,7 +26,7 @@ app.use("/api/reports", reportRoutes);
 
 //test for running aws deploye
 app.use('/',(req,res)=>{
-  res.send("server is running")
+  res.send("Welcome to Nalanda Library Management System")
 })
 
 //port define
