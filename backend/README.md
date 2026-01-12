@@ -49,4 +49,27 @@ The system supports **user authentication**, **book management**, **borrowing op
 ---
 
 ## 📁 Project Structure
-
+backend/
+├── config/                 
+│   └── Db.js              
+├── controllers/
+│   └── auth.controller.js       
+│   └── book.controller.js    
+│   └── borrow.controller.js   
+│   └── report.controller.js
+│── middlewares/             
+│   └── auth.middleware.js       
+│   └── role.middleware.js      
+│── models/                
+│   └── book.model.js   
+│   └── borrow.model.js 
+│   └── user.model.js      
+│── routes/
+│   └── book.route.js
+│   └── auth.route.js
+│   └── borrow.route.js
+│   └── report.route.js
+├── app.js            
+│── utils.js          
+├── package.json           
+└── README.md             
