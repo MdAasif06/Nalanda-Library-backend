@@ -104,5 +104,63 @@ backend/
 
 4. **Open your browser**
    - Visit: `http://localhost:8080`
-  
+## 📌 API Endpoints (Summary)
+
+### 🔐 Authentication
+- **POST** `/api/auth/register`  
+  Register a new user
+
+- **POST** `/api/auth/login`  
+  Login user and receive JWT token
+
+---
+
+### 📚 Books
+- **POST** `/api/books`  
+  Create a new book (Admin only)
+
+- **GET** `/api/books`  
+  Get all books
+
+- **PUT** `/api/books/:id`  
+  Update book details (Admin only)
+
+- **DELETE** `/api/books/:id`  
+  Delete a book (Admin only)
+
+---
+
+### 🔄 Borrow
+- **POST** `/api/borrow/borrow`  
+  Borrow a book
+
+- **POST** `/api/borrow/return`  
+  Return a borrowed book
+
+- **GET** `/api/borrow/history`  
+  View borrowing history of the logged‑in user
+
+---
+
+### 📊 Reports
+- **GET** `/api/reports/most-borrowed-books`  
+  Get list of most borrowed books
+
+- **GET** `/api/reports/active-members`  
+  Get most active members based on borrowing history
+
+- **GET** `/api/reports/book-availability`  
+  Get summary of total, borrowed, and available books
+
+---
+
+## 🧪 Testing
+
+- All APIs tested using **Postman**
+- JWT authentication tested for protected routes
+- Role‑based access verified:
+  - Admin access
+  - Member access
+- Error handling tested for invalid requests
+
 
