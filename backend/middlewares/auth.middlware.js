@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 
 const authMiddleware = (req, res, next) => {
-  // Header se token nikaalna
+  // Header to find token 
   const authHeader = req.headers.authorization;
   if (!authHeader)
     return res.status(401).json({ message: "No token provided" });

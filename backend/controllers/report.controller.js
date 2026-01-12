@@ -21,7 +21,6 @@ export const mostBorrowedBooks = async (req, res) => {
     },
     { $unwind: "$book" }
   ]);
-
   res.json(report);
 };
 
