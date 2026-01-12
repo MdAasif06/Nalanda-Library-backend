@@ -131,13 +131,13 @@ backend/
 ---
 
 ### 🔄 Borrow
-- **POST** `/api/borrow/borrow`  
+- **POST** `/api/borrows/borrow`  
   Borrow a book
 
-- **POST** `/api/borrow/return`  
+- **POST** `/api/borrows/return`  
   Return a borrowed book
 
-- **GET** `/api/borrow/history`  
+- **GET** `/api/borrows/history`  
   View borrowing history of the logged‑in user
 
 ---
@@ -162,5 +162,6 @@ backend/
   - Admin access
   - Member access
 - Error handling tested for invalid requests
-
+## AWS deployed backend URL
+ - http://nalandalmsbackend-env.eba-zjf3xmpu.ap-south-1.elasticbeanstalk.com
 
